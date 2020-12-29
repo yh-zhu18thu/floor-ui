@@ -1,29 +1,7 @@
-# MRTK-Quest-Sample
+# FloorUI项目说明
 
-Sample project for setting up with [MRTK-Quest](https://github.com/provencher/MRTK-Quest). Used only for educational purposes.
+本项目是一个在VR环境下的人机交互测试。我们希望探索一种不常见的、呈现在地板上的交互方式，来缓解那些我们的手被占用却想做一些与智能家具简单交互的尴尬（包括但不限于手上沾满面糊却想打开电视解闷、双手提着购物袋却想开灯etc.）
 
-**As of [MRTK 2.5](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.5.0/Documentation/ReleaseNotes.html), Oculus platforms are officially supported, leveraging the code that powers MRTK-Quest.**
+在这个项目里我们将一个用户界面呈现在地板上，通过视线选择和肢体选择两种方式来进行选择。视线选择是指用户注视着某一选项，即可完成选择；肢体选择则是通过用脚“踩”对应的选项来完成选择，由于oculus没有足部的tracker甚至不能向开发者提供外部摄像头画面，我们使用了一款手机app“IP摄像头”配合着粘在鞋上的二维码完成足部追踪。
 
-Some users seem to have issues with getting MRTK and the Oculus integration properly imported into their projects.
-
-As such, this repo serves as an example setup for the official MRTK Oculus integration, using examples from MRTK-Quest. MRTK-Quest 1.2 is not a part of this project.
-
-Further, to make this easier for people who struggle with Git to download, the repository **does not** use submodules, symlinks or git lfs.
-
-Current setup:
-- [MRTK](https://github.com/microsoft/MixedRealityToolkit-Unity) V2.5.1
-- [Oculus Integration](https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022) v20.1
-- Unity 2019.4.12f1
-
-Note:
-- While developping with this sample, you may have to run this cript below, which will bind the Oculus prefab references to the OculusXRSDKDeviceManagerProfile  ![Install Oculus](https://user-images.githubusercontent.com/7420990/97363151-81ef0700-1878-11eb-9b49-0dc26e120a79.png)
-
-分工安排：
-
-| 负责人 | 任务                                                         | 耦合内容                                                     |
-| :----: | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 张潇宇 | 绘制演示demo室内场景                                         | 一些GameObject是可以因地板ui的操控产生变化的，所以这些GameObject的script中要加入相应的信号（相当于对外的接口） |
-| 朱翊豪 | 测试唤醒ui的交互模式，尝试视线注视和直接使用camera的rotation两种方式 | 配合谢哥的实际ui设计和卓神的QRCode定位，能够在用户选中时让操控相应的GameObject所需的信号变化 |
-| 谢昱清 | 绘制地板ui界面                                               | 适配张神的场景设计，计划好在哪些位置可以显示哪些不同的ui     |
-| 张奕卓 | 通过QRCode定位脚在何方                                       | 根据谢哥的界面设计，能够在模块中确定脚处于哪个方位，这个作为一个信号 |
-
+如果您想尝试我们的项目，欢迎联系朱翊豪(yh-zhu18@mails.tsinghua.edu.cn)获取具体的配置方式，谢谢！
